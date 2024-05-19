@@ -3,10 +3,10 @@ from aiogram.types import URLInputFile
 
 from aiogram.filters import Command
 from aiogram import types, F, Router
-from db import Database
+from bot.db import Database
 
 router = Router()
-db = Database('DB')
+db = Database('DB1')
 
 amount = 0
 #id_users = []

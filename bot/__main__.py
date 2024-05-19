@@ -5,8 +5,8 @@ import os
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 
-from config import token
-from try_choosing_handlers import router
+from bot.config import token
+from handlers.try_choosing_handlers import router
 
 __all__ = ['router']
 
@@ -14,6 +14,7 @@ logging.basicConfig(level=logging.INFO)
 
 dp = Dispatcher(storage=MemoryStorage())
 bot = Bot(token)
+#bot = Bot(os.getenv('token'))
 
 
 async def main():
