@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and further1">
-      <change afterPath="$PROJECT_DIR$/bot/flask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyZooBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyZooBot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/__main__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +50,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Docker..venv: Compose Deployment.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
     "Python.__main__.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -65,7 +64,7 @@
       <recent name="C:\Users\User\PycharmProjects\MyZooBot\bot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__main__">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="MyZooBot" />
       <option name="ENV_FILES" value="" />
@@ -111,10 +110,23 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
       </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
       <method v="2" />
     </configuration>
     <configuration name=".venv: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -128,6 +140,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Docker..venv: Compose Deployment" />
       </list>
     </recent_temporary>
@@ -188,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716124748962</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="and then">
+      <option name="closed" value="true" />
+      <created>1716136300096</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716136300096</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -197,6 +218,7 @@
     <MESSAGE value="requirements" />
     <MESSAGE value="and further" />
     <MESSAGE value="and further1" />
-    <option name="LAST_COMMIT_MESSAGE" value="and further1" />
+    <MESSAGE value="and then" />
+    <option name="LAST_COMMIT_MESSAGE" value="and then" />
   </component>
 </project>
