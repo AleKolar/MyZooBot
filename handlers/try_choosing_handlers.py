@@ -105,11 +105,10 @@ async def yours_choice5(message: types.Message):
 
 @router.message(F.text.lower() == "сосиска в тесте")
 async def yours_choice6(message: types.Message):
-    file_ids = []
     global amount
-    amount += 8
+    amount += 12
 
-    if amount == 14:
+    if amount == 18:
         image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/d5f2c003-4e95-4e65-8ba7-8ee30002e85b.jpg")
         await message.answer_photo(
@@ -120,7 +119,7 @@ async def yours_choice6(message: types.Message):
         amount = 0
 
 
-    elif amount == 15:
+    elif amount == 19:
         image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/83e76f49-856e-4330-a472-b6f1c92da16c.jpg")
         await message.answer_photo(
@@ -131,7 +130,7 @@ async def yours_choice6(message: types.Message):
         amount = 0
 
 
-    elif amount == 16:
+    elif amount == 20:
         image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/6d771474-82f9-4f55-b6c5-1034e026fdd4.jpeg")
         await message.answer_photo(
@@ -142,7 +141,7 @@ async def yours_choice6(message: types.Message):
         amount = 0
 
 
-    elif amount == 17:
+    elif amount == 21:
         image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/104e9146-5742-4dc7-8956-d15c712a876b.jpeg")
         await message.answer_photo(
