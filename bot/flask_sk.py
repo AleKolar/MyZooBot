@@ -1,12 +1,11 @@
 ''' Чтоб бот не отключалсяю зальем его (напр. UptimeRobot) и "он" его будет будить'''
 
 from flask import Flask
-from flask import request
 from threading import Thread
 import time
 import requests
 
-app = Flask(__name__)
+app = Flask('')
 
 
 @app.route('/')

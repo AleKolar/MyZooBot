@@ -6,7 +6,8 @@ from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 
 from bot.config import token
-from bot.flask import keep_alive
+from bot.flask_sk import keep_alive
+
 from handlers.try_choosing_handlers import router
 
 __all__ = ['router']
@@ -28,6 +29,6 @@ async def main():
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
-keep_alive()
+#keep_alive()
 if __name__ == "__main__":
     asyncio.run(main())
