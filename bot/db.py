@@ -13,10 +13,20 @@ class Database:
 
     def add_user(self, user_id):
         with self.connection:
-            if user_id  == None:
-                return self.cursor.execute("INSERT INTO 'users' ('user_id') VALUES (?)", (user_id,))
-            else:
-                return False
+            self.cursor.execute("INSERT INTO 'users' ('user_id') VALUES (?)", (user_id,))
+            return self.connection.commit()
+
+    def add_pic(self):
+        self.cursor.execute('CREATE TABLE IF NOT EXIST photos(amount_photo INTEGER PRIMARY KEY, photo BLOB)')
+        for i in range(1, 10):
+            with open(f'{i}.jpeg', 'rb') as photo:
+                h = photo.read()
+                self.cursor.execute('INSERT INTO photos(photo) VALUES(?)', [h])
+                return self.connection.commit()
+
+    def close(self):
+        self.connection.close()
+
 
 
 

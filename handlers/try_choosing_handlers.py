@@ -39,7 +39,7 @@ async def cmd_info(message: types.Message):
 
 @router.message(F.text.lower() == "начнем!")
 async def yours_choice1(message: types.Message):
-    if not db.user_exist(message.from_user.id):
+    if db.user_exist(message.from_user.id) == False:
         db.add_user(message.from_user.id)
         kb0 = [
             [types.KeyboardButton(text="Зима")],
