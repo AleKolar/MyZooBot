@@ -1,5 +1,5 @@
 from aiogram.enums import ParseMode
-from aiogram.types import URLInputFile
+from aiogram.types import URLInputFile, BufferedInputFile
 
 from aiogram.filters import Command
 from aiogram import types, F, Router
@@ -39,8 +39,8 @@ async def cmd_info(message: types.Message):
 
 @router.message(F.text.lower() == "начнем!")
 async def yours_choice1(message: types.Message):
-    if db.user_exist(message.from_user.id):
-        db.add_user(message.from_user.id)
+    if db.user_exist(message.from_user.id) == False:
+
         kb0 = [
             [types.KeyboardButton(text="Зима")],
             [types.KeyboardButton(text="Лето")]
@@ -51,8 +51,10 @@ async def yours_choice1(message: types.Message):
         await message.answer("Какое время года Вы предпочитаете?", reply_markup=keyboard0)
     else:
 
-        await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
-
+        #await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
+        user_id = message.from_user.id
+        photo = db.get_photo(user_id)
+        await message.answer_photo(BufferedInputFile(photo, filename))
 
 @router.message(F.text.lower() == "зима")
 async def yours_choice2(message: types.Message):
@@ -166,7 +168,13 @@ async def yours_choice7(message: types.Message):
     global amount
     amount += 7
     if amount == 13:
-        image_from_url = URLInputFile(
+        user_id = message.from_user.id
+        db.add_pic(user_id)
+        photo = db.get_photo(user_id)
+
+        await message.answer_photo(BufferedInputFile(photo, filename='13.jpeg'))
+
+        '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/79da8af4-7f66-45fc-b526-2d2395ebc9a8.jpeg")
         await message.answer_photo(
             image_from_url,
@@ -174,6 +182,9 @@ async def yours_choice7(message: types.Message):
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
+        '''
+
+
 
 
     elif amount == 14:
