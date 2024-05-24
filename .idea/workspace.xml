@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then3">
+      <change afterPath="$PROJECT_DIR$/bot/13.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/14.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/15.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/16.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/17.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/18.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/19.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/20.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/21.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/DB1" beforeDir="false" afterPath="$PROJECT_DIR$/bot/DB1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,20 +56,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker..venv: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.db.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.try_choosing_handlers.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker..venv: Compose Deployment.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
+    "Python.__main__.executor": "Run",
+    "Python.db.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.try_choosing_handlers.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/User/PycharmProjects/MyZooBot/bot",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\MyZooBot\bot" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\PycharmProjects\MyZooBot\handlers" />
       <recent name="C:\Users\User\PycharmProjects\MyZooBot\bot" />
@@ -245,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716393681533</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="and then3">
+      <option name="closed" value="true" />
+      <created>1716568283066</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716568283066</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
