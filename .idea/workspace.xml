@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then2">
+    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/DB1" beforeDir="false" afterPath="$PROJECT_DIR$/bot/DB1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +68,7 @@
       <recent name="C:\Users\User\PycharmProjects\MyZooBot\bot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__main__">
+  <component name="RunManager">
     <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="MyZooBot" />
       <option name="ENV_FILES" value="" />
@@ -236,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716216835121</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="and then3">
+      <option name="closed" value="true" />
+      <created>1716393681533</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716393681533</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -248,7 +257,8 @@
     <MESSAGE value="and then" />
     <MESSAGE value="and then1" />
     <MESSAGE value="and then2" />
-    <option name="LAST_COMMIT_MESSAGE" value="and then2" />
+    <MESSAGE value="and then3" />
+    <option name="LAST_COMMIT_MESSAGE" value="and then3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

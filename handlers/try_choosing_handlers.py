@@ -39,7 +39,7 @@ async def cmd_info(message: types.Message):
 
 @router.message(F.text.lower() == "начнем!")
 async def yours_choice1(message: types.Message):
-    if db.user_exist(message.from_user.id) == False:
+    if db.user_exist(message.from_user.id):
         db.add_user(message.from_user.id)
         kb0 = [
             [types.KeyboardButton(text="Зима")],
@@ -50,6 +50,7 @@ async def yours_choice1(message: types.Message):
         input_field_placeholder="Синхронизируйся со своим питомцем")
         await message.answer("Какое время года Вы предпочитаете?", reply_markup=keyboard0)
     else:
+
         await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
 
 
