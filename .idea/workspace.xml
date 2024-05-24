@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then3">
-      <change afterPath="$PROJECT_DIR$/bot/13.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/14.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/15.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/16.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/17.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/18.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/19.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/20.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/21.jpeg" afterDir="false" />
+    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/DB1" beforeDir="false" afterPath="$PROJECT_DIR$/bot/DB1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/db.py" afterDir="false" />
@@ -264,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716568283066</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="and then4">
+      <option name="closed" value="true" />
+      <created>1716575780149</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716575780149</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -277,7 +276,8 @@
     <MESSAGE value="and then1" />
     <MESSAGE value="and then2" />
     <MESSAGE value="and then3" />
-    <option name="LAST_COMMIT_MESSAGE" value="and then3" />
+    <MESSAGE value="and then4" />
+    <option name="LAST_COMMIT_MESSAGE" value="and then4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
