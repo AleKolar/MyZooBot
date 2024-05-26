@@ -1,5 +1,5 @@
 from aiogram.enums import ParseMode
-from aiogram.types import URLInputFile, BufferedInputFile
+from aiogram.types import URLInputFile, BufferedInputFile, FSInputFile
 
 from aiogram.filters import Command
 from aiogram import types, F, Router
@@ -39,6 +39,7 @@ async def cmd_info(message: types.Message):
 
 @router.message(F.text.lower() == "начнем!")
 async def yours_choice1(message: types.Message):
+    user_id = message.from_user.id
     if db.user_exist(message.from_user.id) == False:
 
         kb0 = [
@@ -52,9 +53,9 @@ async def yours_choice1(message: types.Message):
     else:
 
         #await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
-        user_id = message.from_user.id
-        photo = db.get_photo(user_id)
-        await message.answer_photo(BufferedInputFile(photo, filename))
+        image_from_pc = FSInputFile( f'{amount}.jpeg')
+        result = await message.answer_photo(image_from_pc, caption="Изображение")
+
 
 @router.message(F.text.lower() == "зима")
 async def yours_choice2(message: types.Message):
@@ -169,10 +170,10 @@ async def yours_choice7(message: types.Message):
     amount += 7
     if amount == 13:
         user_id = message.from_user.id
-        db.add_pic(user_id)
-        photo = db.get_photo(user_id)
-
-        await message.answer_photo(BufferedInputFile(photo, filename='13.jpeg'))
+        db.add_pic(user_id, amount)
+        db.get_photo(user_id, amount)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        result = await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
 
         '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/79da8af4-7f66-45fc-b526-2d2395ebc9a8.jpeg")

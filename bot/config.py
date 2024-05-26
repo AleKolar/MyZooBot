@@ -1,6 +1,6 @@
 token = '6378222593:AAGy_JVzQKHVyKERCNWNfCQQ7EiV9QcuhHY'
 
-
+'''
 
 amount_user = [13, 14, 15, 16, 17, 18 , 19, 20, 21]
 photo = ['https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/79da8af4-7f66-45fc-b526-2d2395ebc9a8.jpeg',
@@ -14,7 +14,7 @@ photo = ['https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/a
             'https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/104e9146-5742-4dc7-8956-d15c712a876b.jpeg',
             ]
 
-photo_dict = {k: v for k, v in zip(amount_user, photo)}
+photo_dict = {k: v for k, v in zip(amount_user, photo)}'''
 
 
 
