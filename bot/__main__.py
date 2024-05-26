@@ -10,7 +10,9 @@ from bot.flask_sk import keep_alive
 
 from handlers.try_choosing_handlers import router
 
+
 __all__ = ['router']
+
 
 logging.basicConfig(level=logging.INFO)
 
@@ -27,7 +29,7 @@ async def main():
     dp.include_routers(router)
 
     await bot.delete_webhook(drop_pending_updates=True)
-    await dp.start_polling(bot)
+    await dp.start_polling(bot, skip_updates=True)
 
 #keep_alive()
 if __name__ == "__main__":
