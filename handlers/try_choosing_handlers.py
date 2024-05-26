@@ -3,6 +3,7 @@ from aiogram.types import URLInputFile, BufferedInputFile, FSInputFile
 
 from aiogram.filters import Command
 from aiogram import types, F, Router
+
 from bot.db import Database
 
 router = Router()
@@ -53,8 +54,9 @@ async def yours_choice1(message: types.Message):
     else:
 
         #await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
-        image_from_pc = FSInputFile( f'{amount}.jpeg')
-        result = await message.answer_photo(image_from_pc, caption="Изображение")
+        db.cursor.execute("SELECT photo FROM photos WHERE user_id = amount_user")
+        image_from_pc = FSInputFile(f'{'amount_user'}.jpeg')
+        result = await message.answer_photo(image_from_pc, caption="Изображение", reply_markup=ending_markup)
 
 
 @router.message(F.text.lower() == "зима")
