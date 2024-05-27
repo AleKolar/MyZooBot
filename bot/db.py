@@ -16,7 +16,15 @@ class Database:
     def user_exist(self, user_id):
         with self.connection:
             res = self.cursor.execute("SELECT * FROM 'photos' WHERE 'user_id' = ?", (user_id,)).fetchall()
-            return bool(len(res))
+            #return bool(len(res))
+            if bool(len(res)) == False:
+                result = self.cursor.execute("SELECT * FROM 'photos' WHERE 'user_id' = ?", (user_id,))
+                print(result)
+                for p in result:
+                    with open(f'{'amount_user'}.jpeg', 'wb') as file:
+                        return file.write(p[0])
+            else:
+                return bool(len(res))
 
     '''def add_user(self, user_id):
         with self.connection:
@@ -62,9 +70,15 @@ class Database:
         self.connection.close()
 
 
-'''
-a = Database('DB1')
-#print(a.add_pic(111))
-print(a.get_photo(111, 13))
 
-'''
+#a = Database('DB1')
+#print(a.add_pic(111))
+#print(a.get_photo(111, 13))
+#print(a.user_exist(6819726481))
+#connection = sqlite3.connect('DB1')
+#cursor = connection.cursor()
+#result = cursor.execute("SELECT photo FROM photos WHERE user_id = amount_user ")
+
+#print(result)
+
+

@@ -54,9 +54,9 @@ async def yours_choice1(message: types.Message):
     else:
 
         #await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
-        db.cursor.execute("SELECT photo FROM photos WHERE user_id = amount_user")
-        image_from_pc = FSInputFile(f'{'amount_user'}.jpeg')
-        result = await message.answer_photo(image_from_pc, caption="Изображение", reply_markup=ending_markup)
+        db.get_photo(user_id, amount)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        result = await message.answer_photo(image_from_pc, caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!", reply_markup=ending_markup)
 
 
 @router.message(F.text.lower() == "зима")
