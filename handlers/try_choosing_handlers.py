@@ -41,22 +41,22 @@ async def cmd_info(message: types.Message):
 @router.message(F.text.lower() == "начнем!")
 async def yours_choice1(message: types.Message):
     user_id = message.from_user.id
-    if db.user_exist(message.from_user.id) == False:
+    #if db.user_exist(message.from_user.id) == False:
 
-        kb0 = [
+    kb0 = [
             [types.KeyboardButton(text="Зима")],
             [types.KeyboardButton(text="Лето")]
         ]
-        keyboard0 = types.ReplyKeyboardMarkup(keyboard=kb0,
-        resize_keyboard=True,
-        input_field_placeholder="Синхронизируйся со своим питомцем")
-        await message.answer("Какое время года Вы предпочитаете?", reply_markup=keyboard0)
-    else:
+    keyboard0 = types.ReplyKeyboardMarkup(keyboard=kb0,
+    resize_keyboard=True,
+    input_field_placeholder="Синхронизируйся со своим питомцем")
+    await message.answer("Какое время года Вы предпочитаете?", reply_markup=keyboard0)
+    #else:
 
         #await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
-        db.get_photo(user_id, amount)
-        image_from_pc = FSInputFile(f'{amount}.jpeg')
-        result = await message.answer_photo(image_from_pc, caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!", reply_markup=ending_markup)
+        #db.get_photo(user_id)
+        #image_from_pc = FSInputFile(f'{amount}.jpeg')
+        #await message.answer_photo(image_from_pc, caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!", reply_markup=ending_markup)
 
 
 @router.message(F.text.lower() == "зима")
@@ -115,46 +115,70 @@ async def yours_choice6(message: types.Message):
     amount += 12
 
     if amount == 18:
-        image_from_url = URLInputFile(
+        '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/d5f2c003-4e95-4e65-8ba7-8ee30002e85b.jpg")
         await message.answer_photo(
             image_from_url,
             caption="Вам очень подойдет ЕНОТОВИДНАЯ СОБАКА, возьмите его 😃", reply_markup=markup)
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
+        amount = 0'''
+        user_id = message.from_user.id
+        db.add_pic(user_id, amount)
+        db.get_photo(user_id)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
     elif amount == 19:
-        image_from_url = URLInputFile(
+        '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/83e76f49-856e-4330-a472-b6f1c92da16c.jpg")
         await message.answer_photo(
             image_from_url,
             caption="Вам очень подойдет БИНТУРОНГ, возьмите его 😃", reply_markup=markup)
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
+        amount = 0'''
+        user_id = message.from_user.id
+        db.add_pic(user_id, amount)
+        db.get_photo(user_id)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
     elif amount == 20:
-        image_from_url = URLInputFile(
+        '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/6d771474-82f9-4f55-b6c5-1034e026fdd4.jpeg")
         await message.answer_photo(
             image_from_url,
             caption="Вам очень подойдет КАМЫШОВЫЙ КОТ, возьмите его 😃", reply_markup=markup)
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
+        amount = 0'''
+        user_id = message.from_user.id
+        db.add_pic(user_id, amount)
+        db.get_photo(user_id)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
     elif amount == 21:
-        image_from_url = URLInputFile(
+        '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/104e9146-5742-4dc7-8956-d15c712a876b.jpeg")
         await message.answer_photo(
             image_from_url,
             caption="Вам очень подойдет ДЛИННОХВОСТАЯ НЕЯСЫТЬ, возьмите его 😃", reply_markup=markup)
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
+        amount = 0'''
+        user_id = message.from_user.id
+        db.add_pic(user_id, amount)
+        db.get_photo(user_id)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
@@ -173,15 +197,15 @@ async def yours_choice7(message: types.Message):
     if amount == 13:
         user_id = message.from_user.id
         db.add_pic(user_id, amount)
-        db.get_photo(user_id, amount)
+        db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        result = await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
-
+        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        amount = 0
         '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/79da8af4-7f66-45fc-b526-2d2395ebc9a8.jpeg")
         await message.answer_photo(
             image_from_url,
-            caption="Вам очень подойдет ЛЕМУР КОШАЧИЙ, возьмите его 😃", reply_markup=markup)
+            )
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
@@ -191,46 +215,70 @@ async def yours_choice7(message: types.Message):
 
 
     elif amount == 14:
-        image_from_url = URLInputFile(
+        '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/11563396-1d63-4451-a0e6-a3fd4282d5cf.jpeg")
         await message.answer_photo(
             image_from_url,
             caption="Вам очень подойдет ДВУХЦВЕТНЫЙ КОЖАН, возьмите его 😃", reply_markup=markup)
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
+        amount = 0'''
+        user_id = message.from_user.id
+        db.add_pic(user_id, amount)
+        db.get_photo(user_id)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
     elif amount == 15:
-        image_from_url = URLInputFile(
+        '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/132e290b-76fd-4fc1-a70c-eba12dcc9e1c.jpeg")
         await message.answer_photo(
             image_from_url,
             caption="Вам очень подойдет КАПСКАЯ ЗЕМЛЯНАЯ БЕЛКА, возьмите его 😃", reply_markup=markup)
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
+        amount = 0'''
+        user_id = message.from_user.id
+        db.add_pic(user_id, amount)
+        db.get_photo(user_id)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
     elif amount == 16:
-        image_from_url = URLInputFile(
+        '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/29c253e7-449f-4f6e-b2ab-e8f89b3f71c2.jpeg")
         await message.answer_photo(
             image_from_url,
             caption="Вам очень подойдет БОРОДАТАЯ НЕЯСЫТЬ, возьмите его 😃", reply_markup=markup)
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
+        amount = 0'''
+        user_id = message.from_user.id
+        db.add_pic(user_id, amount)
+        db.get_photo(user_id)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
     elif amount == 17:
-        image_from_url = URLInputFile(
+        '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/29c253e7-449f-4f6e-b2ab-e8f89b3f71c2.jpeg")
         await message.answer_photo(
             image_from_url,
             caption="Вам очень подойдет БЕЛАЯ СОВА, возьмите его 😃", reply_markup=markup)
 
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
+        amount = 0'''
+        user_id = message.from_user.id
+        db.add_pic(user_id, amount)
+        db.get_photo(user_id)
+        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
     else:
