@@ -1,9 +1,14 @@
+import io
+from io import BytesIO
+
 from aiogram.enums import ParseMode
-from aiogram.types import URLInputFile, BufferedInputFile, FSInputFile
+from aiogram.methods import SendPhoto
+from aiogram.types import URLInputFile, BufferedInputFile, FSInputFile, InputFile
 
 from aiogram.filters import Command
 from aiogram import types, F, Router
 
+import bot
 from bot.db import Database
 
 router = Router()
@@ -41,25 +46,39 @@ async def cmd_info(message: types.Message):
 @router.message(F.text.lower() == "начнем!")
 async def yours_choice1(message: types.Message):
     user_id = message.from_user.id
-    #if db.user_exist(message.from_user.id) == False:
-
-    kb0 = [
+    if db.user_exist(user_id) == False:
+        kb0 = [
             [types.KeyboardButton(text="Зима")],
             [types.KeyboardButton(text="Лето")]
         ]
-    keyboard0 = types.ReplyKeyboardMarkup(keyboard=kb0,
-    resize_keyboard=True,
-    input_field_placeholder="Синхронизируйся со своим питомцем")
-    await message.answer("Какое время года Вы предпочитаете?", reply_markup=keyboard0)
-    #else:
+        keyboard0 = types.ReplyKeyboardMarkup(keyboard=kb0,
+        resize_keyboard=True,
+        input_field_placeholder="Синхронизируйся со своим питомцем")
+        await message.answer("Какое время года Вы предпочитаете?", reply_markup=keyboard0)
+    else:
+        '''await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
+        photo = db.cursor.execute("SELECT photo FROM photos WHERE user_id = ?", (user_id,)).fetchone()
+        for i in [f'{user_id}.jpeg',]:
+            if i == f'{user_id}.jpeg':
+                with open(f'{user_id}.jpeg', 'wb') as file:
+                    file.write(photo[0])
+                    image_from_pc = types.InputFile(f'{user_id}.jpeg')
+                    await message.answer_photo(image_from_pc, caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!",
+                                            reply_markup=ending_markup)'''
+        await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
+        photo = db.cursor.execute("SELECT photo FROM photos WHERE user_id = ?", (user_id,)).fetchone()
+        for user_id in photo:
+            with open(f'{user_id}.jpeg', 'wb') as file:
+                file.write(photo[0])
+            await message.answer_photo(f'{user_id}.jpeg', caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!",
+                                                   reply_markup=ending_markup)
 
-        #await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
-        #db.get_photo(user_id)
-        #image_from_pc = FSInputFile(f'{amount}.jpeg')
-        #await message.answer_photo(image_from_pc, caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!", reply_markup=ending_markup)
 
 
-@router.message(F.text.lower() == "зима")
+
+
+
+@ router.message(F.text.lower() == "зима")
 async def yours_choice2(message: types.Message):
     global amount
     amount += 3
@@ -68,9 +87,10 @@ async def yours_choice2(message: types.Message):
         [types.KeyboardButton(text="День")]
     ]
     keyboard1 = types.ReplyKeyboardMarkup(keyboard=kb1,
-    resize_keyboard=True,
-    input_field_placeholder="Синхронизируйся со своим питомцем")
+                                          resize_keyboard=True,
+                                          input_field_placeholder="Синхронизируйся со своим питомцем")
     await message.answer("Какое время суток Вы предпочитаете?", reply_markup=keyboard1)
+
 
 @router.message(F.text.lower() == "лето")
 async def yours_choice3(message: types.Message):
@@ -127,7 +147,7 @@ async def yours_choice6(message: types.Message):
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        await message.answer_photo(image_from_pc, caption="ЕНОТОВИДНАЯ СОБАКАб ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
@@ -144,7 +164,7 @@ async def yours_choice6(message: types.Message):
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        await message.answer_photo(image_from_pc, caption="БИНТУРОНГ, ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
@@ -161,7 +181,7 @@ async def yours_choice6(message: types.Message):
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        await message.answer_photo(image_from_pc, caption="КАМЫШОВЫЙ КОТ, ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
@@ -178,7 +198,7 @@ async def yours_choice6(message: types.Message):
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        await message.answer_photo(image_from_pc, caption="ДЛИННОХВОСТАЯ НЕЯСЫТЬ, ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
@@ -199,7 +219,7 @@ async def yours_choice7(message: types.Message):
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        await message.answer_photo(image_from_pc, caption="ЛЕМУР КОШАЧИЙб ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
         '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/79da8af4-7f66-45fc-b526-2d2395ebc9a8.jpeg")
@@ -210,9 +230,6 @@ async def yours_choice7(message: types.Message):
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
         '''
-
-
-
 
     elif amount == 14:
         '''image_from_url = URLInputFile(
@@ -227,7 +244,7 @@ async def yours_choice7(message: types.Message):
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        await message.answer_photo(image_from_pc, caption="ДВУХЦВЕТНЫЙ КОЖАН, ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
@@ -244,7 +261,7 @@ async def yours_choice7(message: types.Message):
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        await message.answer_photo(image_from_pc, caption="КАПСКАЯ ЗЕМЛЯНАЯ БЕЛКА, ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
@@ -261,7 +278,7 @@ async def yours_choice7(message: types.Message):
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        await message.answer_photo(image_from_pc, caption="БОРОДАТАЯ НЕЯСЫТЬ, ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
@@ -278,7 +295,7 @@ async def yours_choice7(message: types.Message):
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
         image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        await message.answer_photo(image_from_pc, caption="БЕЛАЯ СОВА, ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
     else:
