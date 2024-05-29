@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then7">
+    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/DB1" beforeDir="false" afterPath="$PROJECT_DIR$/bot/DB1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" afterDir="false" />
     </list>
@@ -322,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716831348180</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="and then8">
+      <option name="closed" value="true" />
+      <created>1717008307416</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1717008307416</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -339,7 +346,8 @@
     <MESSAGE value="and then5" />
     <MESSAGE value="and then6" />
     <MESSAGE value="and then7" />
-    <option name="LAST_COMMIT_MESSAGE" value="and then7" />
+    <MESSAGE value="and then8" />
+    <option name="LAST_COMMIT_MESSAGE" value="and then8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

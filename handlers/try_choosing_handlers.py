@@ -56,12 +56,12 @@ async def yours_choice1(message: types.Message):
         input_field_placeholder="Синхронизируйся со своим питомцем")
         await message.answer("Какое время года Вы предпочитаете?", reply_markup=keyboard0)
     else:
-        await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
-        #photo = db.cursor.execute("SELECT photo FROM photos WHERE user_id = ?", (user_id,)).fetchone()
-        #db.get_photo(user_id)
-        #await message.answer_photo(f'{user_id}.jpeg', caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!",
-                                                   #reply_markup=ending_markup)
-        await message.answer_photo(types.InputFile(db.get_photo(user_id)))
+        #await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
+        #await message.answer_photo(types.InputFile(f'{user_id}.jpeg'), caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!", reply_markup=ending_markup)
+        with open(f'{user_id}.jpeg', 'rb') as photo:
+            h = photo.read()
+            await message.answer_photo(types.InputFile(h), caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!",
+                                       reply_markup=ending_markup)
 
 
 

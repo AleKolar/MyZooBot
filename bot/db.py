@@ -3,6 +3,7 @@ import sqlite3
 
 from typing import TYPE_CHECKING
 
+from PIL import Image
 from aiogram.types import FSInputFile
 
 import bot
@@ -35,19 +36,28 @@ class Database:
 
 
     def get_photo(self, user_id):
+        '''
         photo = self.cursor.execute("SELECT photo FROM photos WHERE user_id = user_id").fetchone()
         for p in photo:
             with open(f'{user_id}.jpeg', 'wb') as file:
                 io_bytes = io.BytesIO(p)
-                return io_bytes
-                #return file.write(p[0])
-
+                img = Image.open(io_bytes)
+                return img
+                img.show()
+        '''
+        photo = self.cursor.execute("SELECT photo FROM photos WHERE user_id = ?", (user_id,)).fetchone()
+        if photo:
+            image_data = photo[0]
+            with open(f'{user_id}.jpeg', 'wb') as file:
+                return file.write(image_data)
+#
 
 
     def close(self):
         self.connection.close()
 
 
-
+a = Database('DB1')
+print(a.get_photo(user_id=6819726481))
 
 
