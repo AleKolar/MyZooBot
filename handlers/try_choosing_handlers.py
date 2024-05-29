@@ -56,22 +56,13 @@ async def yours_choice1(message: types.Message):
         input_field_placeholder="Синхронизируйся со своим питомцем")
         await message.answer("Какое время года Вы предпочитаете?", reply_markup=keyboard0)
     else:
-        '''await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
-        photo = db.cursor.execute("SELECT photo FROM photos WHERE user_id = ?", (user_id,)).fetchone()
-        for i in [f'{user_id}.jpeg',]:
-            if i == f'{user_id}.jpeg':
-                with open(f'{user_id}.jpeg', 'wb') as file:
-                    file.write(photo[0])
-                    image_from_pc = types.InputFile(f'{user_id}.jpeg')
-                    await message.answer_photo(image_from_pc, caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!",
-                                            reply_markup=ending_markup)'''
         await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
-        photo = db.cursor.execute("SELECT photo FROM photos WHERE user_id = ?", (user_id,)).fetchone()
-        for user_id in photo:
-            with open(f'{user_id}.jpeg', 'wb') as file:
-                file.write(photo[0])
-            await message.answer_photo(f'{user_id}.jpeg', caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!",
-                                                   reply_markup=ending_markup)
+        #photo = db.cursor.execute("SELECT photo FROM photos WHERE user_id = ?", (user_id,)).fetchone()
+        #db.get_photo(user_id)
+        #await message.answer_photo(f'{user_id}.jpeg', caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!",
+                                                   #reply_markup=ending_markup)
+        await message.answer_photo(types.InputFile(db.get_photo(user_id)))
+
 
 
 

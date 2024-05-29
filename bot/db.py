@@ -1,3 +1,4 @@
+import io
 import sqlite3
 
 from typing import TYPE_CHECKING
@@ -34,10 +35,13 @@ class Database:
 
 
     def get_photo(self, user_id):
-        photo = self.cursor.execute("SELECT photo FROM photos WHERE user_id = amount_user")
-        for amount in photo:
-            with open(f'{amount}.jpeg', 'wb') as file:
-                return file.write(amount[0])
+        photo = self.cursor.execute("SELECT photo FROM photos WHERE user_id = user_id").fetchone()
+        for p in photo:
+            with open(f'{user_id}.jpeg', 'wb') as file:
+                io_bytes = io.BytesIO(p)
+                return io_bytes
+                #return file.write(p[0])
+
 
 
     def close(self):
