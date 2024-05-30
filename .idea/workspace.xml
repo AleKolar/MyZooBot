@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then9">
+    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then10">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/DB1" beforeDir="false" afterPath="$PROJECT_DIR$/bot/DB1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717011153487</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="and then10">
+      <option name="closed" value="true" />
+      <created>1717085893776</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1717085893776</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -357,7 +363,8 @@
     <MESSAGE value="and then7" />
     <MESSAGE value="and then8" />
     <MESSAGE value="and then9" />
-    <option name="LAST_COMMIT_MESSAGE" value="and then9" />
+    <MESSAGE value="and then10" />
+    <option name="LAST_COMMIT_MESSAGE" value="and then10" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
