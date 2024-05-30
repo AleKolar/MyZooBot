@@ -58,14 +58,10 @@ async def yours_choice1(message: types.Message):
     else:
         #await message.answer("Ваш питомец Вами уже выбран, этого не отменить", reply_markup=ending_markup)
         #await message.answer_photo(types.InputFile(f'{user_id}.jpeg'), caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!", reply_markup=ending_markup)
-        with open(f'{user_id}.jpeg', 'rb') as photo:
-            h = photo.read()
-            await message.answer_photo(types.InputFile(h), caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!",
-                                       reply_markup=ending_markup)
-
-
-
-
+        #await message.answer_photo(types.InputFile(db.get_photo(user_id)), caption="У ВАС УЖЕ ЕСТЬ ПИТОМЕЦ, ЭТОГО НЕ ИЗМЕНИТЬ!",
+                                           #reply_markup=ending_markup)
+        some = FSInputFile(db.get_photo(user_id))
+        await message.answer_photo(some, caption="Это Ваш Питомец Этого не отменить")
 
 
 
@@ -137,8 +133,8 @@ async def yours_choice6(message: types.Message):
         user_id = message.from_user.id
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
-        image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ЕНОТОВИДНАЯ СОБАКАб ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        image_from_pc = FSInputFile(f'{user_id}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ЕНОТОВИДНАЯ СОБАКА, ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
 
@@ -171,7 +167,7 @@ async def yours_choice6(message: types.Message):
         user_id = message.from_user.id
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
-        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        image_from_pc = FSInputFile(f'{user_id}.jpeg')
         await message.answer_photo(image_from_pc, caption="КАМЫШОВЫЙ КОТ, ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
@@ -188,7 +184,7 @@ async def yours_choice6(message: types.Message):
         user_id = message.from_user.id
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
-        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        image_from_pc = FSInputFile(f'{user_id}.jpeg')
         await message.answer_photo(image_from_pc, caption="ДЛИННОХВОСТАЯ НЕЯСЫТЬ, ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
@@ -209,8 +205,8 @@ async def yours_choice7(message: types.Message):
         user_id = message.from_user.id
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
-        image_from_pc = FSInputFile(f'{amount}.jpeg')
-        await message.answer_photo(image_from_pc, caption="ЛЕМУР КОШАЧИЙб ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
+        image_from_pc = FSInputFile(f'{user_id}.jpeg')
+        await message.answer_photo(image_from_pc, caption="ЛЕМУР КОШАЧИЙ, ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
         '''image_from_url = URLInputFile(
             "https://storage.moscowzoo.ru/storage/647edc2a70bb5462366280fc/images/animals/79da8af4-7f66-45fc-b526-2d2395ebc9a8.jpeg")
@@ -234,7 +230,7 @@ async def yours_choice7(message: types.Message):
         user_id = message.from_user.id
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
-        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        image_from_pc = FSInputFile(f'{user_id}.jpeg')
         await message.answer_photo(image_from_pc, caption="ДВУХЦВЕТНЫЙ КОЖАН, ОН ВАШ, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
@@ -251,7 +247,7 @@ async def yours_choice7(message: types.Message):
         user_id = message.from_user.id
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
-        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        image_from_pc = FSInputFile(f'{user_id}.jpeg')
         await message.answer_photo(image_from_pc, caption="КАПСКАЯ ЗЕМЛЯНАЯ БЕЛКА, ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
@@ -268,7 +264,7 @@ async def yours_choice7(message: types.Message):
         user_id = message.from_user.id
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
-        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        image_from_pc = FSInputFile(f'{user_id}.jpeg')
         await message.answer_photo(image_from_pc, caption="БОРОДАТАЯ НЕЯСЫТЬ, ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 
@@ -285,7 +281,7 @@ async def yours_choice7(message: types.Message):
         user_id = message.from_user.id
         db.add_pic(user_id, amount)
         db.get_photo(user_id)
-        image_from_pc = FSInputFile(f'{amount}.jpeg')
+        image_from_pc = FSInputFile(f'{user_id}.jpeg')
         await message.answer_photo(image_from_pc, caption="БЕЛАЯ СОВА, ОНА ВАША, ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
 

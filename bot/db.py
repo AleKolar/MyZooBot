@@ -1,12 +1,9 @@
-import io
+#import io
 import sqlite3
+#from PIL import Image
+#from typing import TYPE_CHECKING
 
-from typing import TYPE_CHECKING
-
-from PIL import Image
-from aiogram.types import FSInputFile
-
-import bot
+#from aiogram.types import FSInputFile
 
 
 #if TYPE_CHECKING:
@@ -45,19 +42,18 @@ class Database:
                 return img
                 img.show()
         '''
-        photo = self.cursor.execute("SELECT photo FROM photos WHERE user_id = ?", (user_id,)).fetchone()
-        if photo:
+
+        photo = self.cursor.execute("SELECT photo FROM photos WHERE user_id = user_id").fetchone()
+        for p in photo:
             image_data = photo[0]
             with open(f'{user_id}.jpeg', 'wb') as file:
-                return file.write(image_data)
+                file.write(image_data)
+                return f'{user_id}.jpeg'
+                #return img.show()
+                #return file.write(image_data)
 #
 
 
     def close(self):
         self.connection.close()
-
-
-a = Database('DB1')
-print(a.get_photo(user_id=6819726481))
-
 
