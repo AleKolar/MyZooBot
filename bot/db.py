@@ -1,9 +1,9 @@
-#import io
+
 import sqlite3
 #from PIL import Image
 #from typing import TYPE_CHECKING
 
-#from aiogram.types import FSInputFile
+
 
 
 #if TYPE_CHECKING:
