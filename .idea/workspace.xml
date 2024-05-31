@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="and then10">
+      <change afterPath="$PROJECT_DIR$/handlers/talk_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/DB1" beforeDir="false" afterPath="$PROJECT_DIR$/bot/DB1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/try_choosing_handlers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,10 +151,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker..venv: Compose Deployment" />
-      <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Python.__main__" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Docker..venv: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
@@ -353,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717088011284</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="and then10">
+      <option name="closed" value="true" />
+      <created>1717179589510</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1717179589510</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

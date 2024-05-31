@@ -9,7 +9,7 @@ from bot.config import token
 from bot.flask_sk import keep_alive
 
 from handlers.try_choosing_handlers import router
-
+from handlers import talk_handler
 
 __all__ = ['router']
 
@@ -26,7 +26,7 @@ async def main():
     bot = Bot(token)
     dp = Dispatcher()
 
-    dp.include_routers(router)
+    dp.include_routers(router, talk_handler.router)
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot, skip_updates=True)

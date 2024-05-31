@@ -1,9 +1,12 @@
-import io
+
+from datetime import datetime
 from io import BytesIO
 
-from aiogram.enums import ParseMode
+
+from aiogram.enums import ParseMode, parse_mode
+from aiogram.fsm.context import FSMContext
 from aiogram.methods import SendPhoto
-from aiogram.types import URLInputFile, BufferedInputFile, FSInputFile, InputFile
+from aiogram.types import URLInputFile, BufferedInputFile, FSInputFile, InputFile, Message
 
 from aiogram.filters import Command
 from aiogram import types, F, Router
@@ -289,5 +292,12 @@ async def yours_choice7(message: types.Message):
         await message.answer("У нас нет для Вас питомца")
         await message.answer("ЭТО СУДЬБА!", reply_markup=ending_markup)
         amount = 0
+
+    @router.message()
+    async def talk_with_me(message: Message):
+        time_now = datetime.now().strftime('%H:%M')
+        added_text = (f"Создано в {time_now}")
+        await message.answer(f"{added_text}\n\n{"Я здесь не для общения, а чтоб определить Вашего Питомца"}", parse_mode=ParseMode.MARKDOWN_V2)
+
 
 
