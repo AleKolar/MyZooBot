@@ -1,4 +1,4 @@
-token = '6378222593:AAGy_JVzQKHVyKERCNWNfCQQ7EiV9QcuhHY'
+token = ''
 
 
 

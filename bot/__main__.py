@@ -1,6 +1,6 @@
 import asyncio
 import logging
-
+import os
 
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
@@ -17,13 +17,13 @@ __all__ = ['router']
 logging.basicConfig(level=logging.INFO)
 
 dp = Dispatcher(storage=MemoryStorage())
-bot = Bot(token)
-#bot = Bot(os.getenv('token'))
+#bot = Bot(token)
+bot = Bot(os.getenv('token'))
 
 
 async def main():
-    #bot = Bot(os.getenv('token'))
-    bot = Bot(token)
+    bot = Bot(os.getenv('token'))
+    #bot = Bot(token)
     dp = Dispatcher()
 
     dp.include_routers(router, talk_handler.router)
