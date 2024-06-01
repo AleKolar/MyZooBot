@@ -150,10 +150,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.__main__" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Docker..venv: Compose Deployment" />
+      <item itemvalue="Python.__main__" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
