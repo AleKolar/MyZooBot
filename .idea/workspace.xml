@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="12">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Postgresql/postgresql_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/Postgresql/postgresql_db.py" afterDir="false" />
+    <list default="true" id="82679650-569c-4b9f-bcf4-5f964505e259" name="Changes" comment="Нужно_пересобрать_образ!">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +192,7 @@
       <workItem from="1731752713232" duration="3404000" />
       <workItem from="1731859109819" duration="134000" />
       <workItem from="1731873408437" duration="2055000" />
-      <workItem from="1743253433168" duration="306000" />
+      <workItem from="1743253433168" duration="626000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -421,7 +418,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717266651619</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Нужно_пересобрать_образ!">
+      <option name="closed" value="true" />
+      <created>1743253785049</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1743253785050</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +450,8 @@
     <MESSAGE value="and then9" />
     <MESSAGE value="and then10" />
     <MESSAGE value="and then11" />
-    <option name="LAST_COMMIT_MESSAGE" value="and then11" />
+    <MESSAGE value="Нужно_пересобрать_образ!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Нужно_пересобрать_образ!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
