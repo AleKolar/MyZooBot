@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    volumes:
+      - .:/bot
+      - ~/.cache/pip:/root/.cache/pip
+    environment:
+      - PYTHONUNBUFFERED=1
+
+      - BOT_TOKEN=your_token_here
+    restart: unless-stopped
